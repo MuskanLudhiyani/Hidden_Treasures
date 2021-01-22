@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>
+SIGN-UP FORM
+</title>
+</head>
+<body bgcolor="black">
+	<font color="yellow">
+<script type="text/javascript">
+function check()
+{
+name1=document.signup.n.value;
+if(!(name1.match(/^\w+[\s]{1}\w+$/)))
+{
+alert("INVALID NAME");
+return false;
+}
+mobile=document.signup.mn.value;
+if((mobile.length!=10)||(!(mobile.match(/^\d{10}$/))))
+{
+alert("INVALID MOBILE NUMBER");
+return false;
+}
+email=document.signup.ei.value;
+if(!(email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)))
+{
+alert("INVALID EMAIL ID");
+return false;
+}
+pass=document.signup.p.value;
+if(pass.length<8)
+{
+alert("PASSWORD SHOULD BE ATLEAST 8 CHARACTERS LONG");
+return false;
+}
+if(!(pass.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/)))
+{
+alert("PASSWORD MUST CONTAIN AT LEAST ONE UPPERCASE ALPHABET, ONE LOWERCASE ALPHABET AND ONE DIGIT");
+return false;
+}
+rpass=document.signup.rp.value;
+if(rpass!=pass)
+{
+alert("PASSWORDS DO NOT MATCH");
+return false;
+}
+
+return true;
+}
+</script>
+<center>
+<b>
+<h3>
+SIGN-UP!
+</h3>
+</b>
+<form name="signup" onsubmit="return check()">
+<table border="2">
+<tr>
+<td>
+<center>
+<b>
+	<font color="yellow">
+NAME
+</font>
+</b>
+</center>
+</td>
+<td>
+<input type="text" name="n" required>
+</td>
+</tr>
+<tr>
+<td>
+<center>
+<b>
+	<font color="yellow">
+MOBILE NUMBER
+</font>
+</b>
+</center>
+</td>
+<td>
+<input type="text" name="mn" required>
+</td>
+</tr>
+<tr>
+<td>
+<center>
+<b>
+	<font color="yellow">
+E-MAIL ID
+</font>
+</b>
+</center>
+</td>
+<td>
+<input type="text" name="ei" required>
+</td>
+</tr>
+<tr>
+<td>
+<center>
+<b>
+	<font color="yellow">
+DATE OF BIRTH
+</font>
+</b>
+</center>
+</td>
+<td>
+<center>
+<input type="date" name="dob">
+</center>
+</td>
+</tr>
+<tr>
+<td>
+<center>
+<b>
+	<font color="yellow">
+CREATE PASSWORD
+</font>
+</b>
+</center>
+</td>
+<td>
+<input type="password" name="p" required>
+</td>
+</tr>
+<tr>
+<td>
+<center>
+<b><font color="yellow">
+RE-ENTER PASSWORD
+</font>
+</b>
+</center>
+</td>
+<td>
+<input type="password" name="rp" required>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<center>
+<input type="submit" value="SUBMIT">
+</center>
+</td>
+</tr>
+</table>
+</form>
+</center></font>
+</body>
+</html>

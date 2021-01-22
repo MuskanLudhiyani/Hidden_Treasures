@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>
+LOGIN FORM
+</title>
+</head>
+<body BGCOLOR="BLACK">
+	<FONT color="yellow">
+<script type="text/javascript">
+function check()
+{
+email=document.login.ei.value;
+if(!(email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)))
+{
+alert("INVALID EMAIL ID");
+return false;
+}
+pass=document.login.p.value;
+if((pass.length<8)||(!(pass.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/))))
+{
+alert("INCORRECT PASSWORD");
+return false;
+}
+return true;
+}
+</script>
+<center>
+<b>
+<h3>
+LOGIN!
+</h3>
+</b>
+<font color="yellow">
+<form name="login" onsubmit="return check()">
+<table border="2">
+<tr>
+<td>
+<center>
+<b>
+	<font color="yellow">
+E-MAIL ID
+</font>
+</b>
+</center>
+</td>
+<td>
+<input type="text" name="ei" required>
+</td>
+</tr>
+<tr>
+<td>
+<center>
+<b>
+	<font color="yellow">
+PASSWORD
+</font>
+</b>
+</center>
+</td>
+<td>
+<input type="password" name="p" required>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<center>
+<input type="submit" value="SUBMIT">
+</center>
+</td>
+</tr>
+</table>
+
+</form>
+</font>
+
+</center>
+</FONT>
+</body>
+</html>

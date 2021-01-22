@@ -1,0 +1,35 @@
+<?php
+$sn="localhost";
+$un="root";
+$pass="";
+$con=mysql_connect($sn,$un,$pass);
+$sql="create database ht";
+$c=mysql_query($sql,$con);
+$sql="use ht";
+$c=mysql_query($sql,$con);
+$sql="create table user(name varchar(50),email varchar(20) primary key ,mobileno int(10) unique, dob date, location varchar(30),gender varchar(20),password varchar(20))";
+$c=mysql_query($sql,$con);
+$sql="create table suggestions(mobileno int(10),suggestion varchar(30),foreign key (mobileno) references user(mobileno))";
+$c=mysql_query($sql,$con);
+$sql="create table cities(pincode int,state varchar(20),name varchar(50) primary key)";
+$c=mysql_query($sql,$con);
+$sql="insert into cities values (110001,'Delhi','Delhi')";
+$c=mysql_query($sql,$con);
+$sql="insert into cities values (223007,'Uttar Pradesh','Agra')";
+$c=mysql_query($sql,$con);
+$sql="insert into cities values (302001,'Rajasthan','Jaipur')";
+$c=mysql_query($sql,$con);
+$sql="insert into cities values (400001,'Maharashtra','Mumbai')";
+$c=mysql_query($sql,$con);
+$sql="create table hiddentreasures(name varchar(50) primary key,cityname varchar(50),information varchar(30), foreign key (cityname) references cities(name))";
+$c=mysql_query($sql,$con);
+$sql="insert into hiddentreasures values ('Taj Mahal','info','Agra')";
+$c=mysql_query($sql,$con);
+$sql="insert into hiddentreasures values ('India Gate','info','Delhi')";
+$c=mysql_query($sql,$con);
+$sql="insert into hiddentreasures values ('Gateway of India','info','Mumbai')";
+$c=mysql_query($sql,$con);
+$sql="insert into hiddentreasures values ('Hawa Mahal','info','Jaipur')";
+$c=mysql_query($sql,$con);
+mysql_close($con);
+?>
